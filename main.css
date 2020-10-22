@@ -1,0 +1,10 @@
+body {
+    font-family: SourceCodePro;
+    background-image: linear-gradient(
+      to right,
+      rgb(71, 215, 157),
+      rgb(37, 196, 154),
+      rgb(30, 202, 215)
+    );
+  }
+  
