@@ -12,4 +12,4 @@ def handleMessage(msg):
 	send(msg, broadcast=True)
 
 if __name__ == '__main__':
-	socketio.run(app, port=5100)
+	socketio.run(app, host="54.92.215.67", port=5100)
