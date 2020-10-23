@@ -61,7 +61,7 @@ print "<!DOCTYPE html>
     <script type='text/javascript'>
         $(document).ready(function() {
         
-            var socket = io.connect('https://gego.herokuapp.com/127.0.0.1:5100');
+            var socket = io.connect('https://127.0.0.1:5100/');
         
             socket.on('connect', function() {
                 //document.getElementById('state').innerHTML = 'Online'
