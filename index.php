@@ -61,7 +61,7 @@ print "<!DOCTYPE html>
     <script type='text/javascript'>
         $(document).ready(function() {
         
-            var socket = io.connect('https://139.162.144.244');
+            var socket = io.connect('https://54.92.215.67:5100');
         
             socket.on('connect', function() {
                 //document.getElementById('state').innerHTML = 'Online'
