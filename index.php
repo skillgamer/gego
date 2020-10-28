@@ -1,11 +1,11 @@
 <?php 
 print "<!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
     <head>
-        <meta charset='UTF-8'>
-        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-        <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.8/socket.io.min.js'></script>
-        <script src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.8/socket.io.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
         <title>Document</title>
         <style>
         body{
@@ -49,19 +49,19 @@ print "<!DOCTYPE html>
     </head>
     <body>
 
-        <div class='messages'>
-        <ul id='messages'>
+        <div class="messages">
+        <ul id="messages">
         </ul>
         </div>
-        <div class='every'>
-    <div class='bf'>
-        <input type='text' class='bottomin' id='myMessage' >
-        <button class='bottomin' id='sendbutton'>send</button>
+        <div class="every">
+    <div class="bf">
+        <input type="text" class="bottomin" id="myMessage" >
+        <button class="bottomin" id="sendbutton">send</button>
     </div>
-    <script type='text/javascript'>
+    <script type="text/javascript">
         $(document).ready(function() {
         
-            var socket = io.connect('https://139.162.144.244:8080');
+            var socket = io.connect('http://139.162.144.244:8080/');
         
             socket.on('connect', function() {
                 //document.getElementById('state').innerHTML = 'Online'
@@ -69,7 +69,7 @@ print "<!DOCTYPE html>
             });
         
             socket.on('message', function(msg) {
-                $('#messages').append('<li>'+msg+'</li>');
+                $("#messages").append('<li>'+msg+'</li>');
                 console.log('Received message');
             });
         
