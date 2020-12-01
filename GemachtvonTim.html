@@ -1,0 +1,71 @@
+<html>
+<head>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.8/socket.io.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<title>DEINE MUTTER</title>
+</head>
+<body>
+<ul id="messages">
+</ul>
+<input type="text" id="myMessage">
+<button id="sendbutton">Deine Mutter</button>
+<script type="text/javascript">
+    //function writeToFile(d1){
+   // var fso = new ActiveXObject("Scripting.FileSystemObject");
+   // var fh = fso.OpenTextFile("mess.txt", 8, false, 0);
+   // fh.WriteLine(d1 + "\n");
+   // fh.Close();
+//}
+
+        $(document).ready(function() {
+        $("#myMessage").keyup(function(event) {
+            if (event.keyCode === 13) {
+                $("#sendbutton").click();
+        }
+        });
+
+
+            var socket = io.connect('http://45.79.248.46:8080');
+        
+            socket.on('connect', function() {
+                //document.getElementById('state').innerHTML = 'Online'
+
+                //socket.send('User has connected!');
+            });
+        
+            socket.on('message', function(msg) {
+              //username = window.location.href.split("name=103123")
+                msg = msg.split('=')
+                
+                   
+                
+                    $("#messages").append('<li>'+msg+'</li>');
+                
+                t = ""
+                //fetch("mess.txt")
+                 //  .then(response => response.text())
+                 //  .then(text => t = text)
+                 //  .then
+        
+            //writeToFile(msg)        
+           
+            });
+        
+            $('#sendbutton').on('click', function() {
+                if (document.getElementById('myMessage').value == ''){
+                    console.log('nothing')
+					$("#messages").append('<li>'+'gib was ein du hund'+'</li>');
+                }else{
+                username = window.location.href.split("name=103123=");
+                username = "name=103123=" + username[1]
+                //socket.send(username)
+                //socket.send($('#myMessage').val());
+		
+                socket.emit('message',$('#myMessage').val())
+                $('#myMessage').val('');}
+            });
+        
+        });
+        </script>
+</body>
+</html>
